@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+		<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>名派服饰</title>
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/help.css"/>
+
+		<script type="text/javascript">
+			var fs = document.documentElement.clientWidth / 750  * 100; 
+			document.querySelector("html").style.fontSize = fs + "px";
+		</script>
+	</head>
+	<body>
+		<header>
+			<a href="index.html"> <i class="iconfont icon-fanhui"> </i></a> 
+			<span>咨询中心</span>
+			
+			<i class="iconfont icon-caidan" id="menu"> </i>
+		</header>
+		
+		<section class="listwrap">
+			<ul class="itemlist">
+				<li class="item">
+					<i class="iconfont icon-icon4" ></i> <span class="title">品质生活，优雅你我。</span> <span class="iconfont icon-start" ></span>
+				</li>
+				<li class="item">
+					<i class="iconfont icon-icon4" ></i> <span class="title">潮流风向，追逐时尚。</span><span class="iconfont icon-start" ></span>
+				</li>
+				<li class="item">
+					<i class="iconfont icon-icon4" ></i> <span class="title">一样的流派，不一样的做派。</span> <span class="iconfont icon-start" ></span>
+				</li>
+				<li class="item">
+					<i class="iconfont icon-icon4" ></i> <span class="title">风向由我，时尚随我。</span> <span class="iconfont icon-start" ></span>
+				</li>
+				<li class="item">
+					<i class="iconfont icon-icon4" ></i> <span class="title">简约于形，时尚于表，成熟于心。</span> <span class="iconfont icon-start" ></span>
+				</li>
+				<li class="item">
+					<i class="iconfont icon-icon4" ></i> <span class="title">潮流风向，引领时尚。</span> <span class="iconfont icon-start" ></span>
+				</li>
+			
+		</section>
+		
+		<section class="concat">
+			
+			<div class="concat-body">
+				<i class="iconfont icon-dianhua"></i>
+				
+				<ul>
+					<li>拨打电话热线：<em>13997786403</em></li>
+					<li>周一至周五 8：00-19：30 周六至周日 8：00-20：00</li>
+				</ul>
+			</div>
+		</section>
+		
+		
+		
+			<!--版权声明-->	
+		<footer>
+			<p class="links"> <a href="">用心服务</a> | <a href="">品质保证</a> | <a href="">微信关注</a> </p>
+			<div style="width:50%;overflow:hidden;position:relative;display:table-cell;text-align:center;vertical-align:middle">
+                <img style="width:50%;position:relative;top:35%;left:25%;"   src="img/ewm.png"/>
+  </div>
+			<p class="copyright"> &copy;名派服饰    湖北巴东西壤坡一路中百仓储对面</p>
+		</footer>
+		
+		
+		
+		
+		<div id="mask">
+			
+			<div class="nav">
+				<a href="index.html">
+					<i class="iconfont icon-zhuye"></i>  
+					<span>主页</span>  
+				</a>
+				<a href="">
+					<i class="iconfont icon-suo"></i>  
+					<span>安全保障</span>  
+				</a>
+				<a href="">
+					<i class="iconfont icon-touzi"></i>  
+					<span>我要投资</span>  
+				</a>
+				<a href="">
+					<i class="iconfont icon-jiaruwomen"></i>  
+					<span>帐户中心</span>  
+				</a>
+			</div>
+			
+		</div>
+		
+		<script src="js/zepto/zepto.js"></script>
+		<script src="js/zepto/event.js"></script>
+		<script src="js/zepto/touch.js"></script>
+		<script>
+			$(function(){
+				$("#menu").on("tap",function(){
+					console.info("tap");
+					$("#mask").toggle();
+				})
+			})
+		</script>
+	</body>
+</html>

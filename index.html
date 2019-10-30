@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>名派服饰</title>
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+
+		<script type="text/javascript">
+			var fs = document.documentElement.clientWidth / 750  * 100; 
+			document.querySelector("html").style.fontSize = fs + "px";
+		</script>
+	</head>
+	<body>
+		<header>
+			<div class="logo">
+				<a href="">
+					<img src="img/logo.png" alt="" />
+					<h1>名派服饰</h1>
+				</a>
+			</div>
+			<div>
+				<a href="">咨询热线</a>：<a href=""><i>13997786403</i></a> 
+			</div>
+			
+		</header>
+		
+		<section class="topnav">
+			<a href="" class="current">首页</a>
+			<a href="">热销商品</a>
+			<a href="help.html">我的客户</a>
+		</section>
+		
+	<!--轮播图-->
+		<div id='slider' class='swipe'>
+			  <div class='swipe-wrap'>
+			    <div class="page">
+			    	<img src="img/slider1.jpg" />
+			    </div>
+			    <div class="page">
+			    	<img src="img/slider2.jpg" alt="" />
+			    </div>
+			   
+			  </div>
+		  
+		  
+		   <div class="indirector">
+		    	<span class="on"></span>
+		    	<span></span>
+		    </div>
+		    
+		</div>
+	<!--轮播图-->	
+	
+	<!--用户导航-->
+		<section class="usernav">
+			<a href="help.html">
+				<i class="iconfont icon-suo"></i>
+				<div>诚信经营</div>
+			</a>
+			<a href="">
+				<i class="iconfont icon-women"></i>
+				<div>品质保证</div>
+			</a>
+			<a href="help.html">
+				<i class="iconfont icon-xinshouzhiyin"></i>
+				<div>假一赔十</div>
+			</a>
+			<a href="help.html">
+				<i class="iconfont icon-wenti"></i>
+				<div>顾客咨询</div>
+			</a>
+		</section>
+	
+	<!--热门产品-->
+		<section class="hotproducts">
+			<div class="title">
+				<h3>热门产品</h3> <a href="">精品展示</a>
+			</div>
+			<ul class="itemlist">
+				<li class="item">
+					<img src="img/1.jpg"/><p style="font-size: 0.28rem;;text-align: center;color: red;">颗粒皮毛一体</p>
+				</li>
+				<li class="item">
+					<img src="img/2.jpg"/><p style="font-size: 0.28rem;;text-align: center;color: red;">颗粒皮毛一体</p>
+				</li>
+				<li class="item">
+					<img src="img/3.jpg"/><p style="font-size: 0.28rem;;text-align: center;color: red;">颗粒皮毛一体</p>
+				</li>
+				
+				<li class="item">
+					<img src="img/4.jpg"/><p style="font-size: 0.28rem;;text-align: center;color: red;">颗粒皮毛一体</p>
+				</li>
+				<li class="item">
+					<img src="img/5.jpg"/><p style="font-size: 0.28rem;;text-align: center;color: red;">颗粒皮毛一体</p>
+				</li>
+				
+				<li class="item">
+					<img src="img/6.jpg"/><p style="font-size: 0.28rem;;text-align: center;color: red;">纯羊毛衫</p>
+				</li>
+				<li class="item">
+					<img src="img/7.jpg"/><p style="font-size:0.28rem;;text-align: center;color: red;">灯芯绒加绒裤子</p>
+				</li>
+				<li class="item">
+					<img src="img/8.jpg"/><p style="font-size: 0.28rem;;text-align: center;color: red;">纯羊毛衫</p>
+				</li>
+				
+			</ul>
+			
+		</section>
+	
+	
+	
+	<!--版权声明-->	
+		<footer>
+			<p class="links"> <a href="">用心服务</a> | <a href="">品质保证</a> | <a href="">微信关注</a> </p>
+			<div style="width:500px;overflow:hidden;position:relative;display:table-cell;text-align:center;vertical-align:middle">
+                <img style="width:50%;position:relative;top:35%;left:25%;"   src="img/ewm.png"/>
+  </div>
+			<p class="copyright"> &copy;名派服饰    湖北巴东西壤坡一路中百仓储对面</p>
+		</footer>
+		
+		<script src="./js/zepto/zepto.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/zepto/event.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/swipe.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			window.mySwipe = Swipe(document.getElementById('slider'),
+				{
+				  startSlide: 0, //第几张开始
+				  speed: 400,
+				  auto: 2000, 	  //是否自动播放。为0就不会自动播放
+				  continuous: true,//无限循环
+				  disableScroll: false,
+				  stopPropagation: false,
+				  callback: function(index, elem) {
+				  	
+				    $(".indirector span").eq(index%2).addClass("on").siblings().removeClass("on");
+				  	console.info("callback",index,elem);
+				  	
+				  },
+				  transitionEnd: function(index, elem) {
+				  	console.info("transitionEnd",index,elem)
+				  	
+				  }
+				}
+			);
+			
+			$(".indirector span").on("click",function(){
+				var index = $(this).index();
+				mySwipe.slide(index, 2000)
+			})
+			
+			
+		</script>
+		
+	</body>
+</html>

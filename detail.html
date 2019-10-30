@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+		<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>名派服饰</title>
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/detail.css"/>
+		
+		<style type="text/css">
+			ul li{margin-bottom: 3px;}
+		</style>
+		<script type="text/javascript">
+			var fs = document.documentElement.clientWidth / 750  * 100; 
+			document.querySelector("html").style.fontSize = fs + "px";
+		</script>
+	</head>
+	<body>
+		<header>
+			<a href="index.html "> <i class="iconfont icon-fanhui"> </i></a> 
+			<span>名派服饰</span>
+			
+			<i class="iconfont icon-caidan" id="menu"> </i>
+		</header>
+		<section class="support">
+			<div class="keys">
+				<span>品味时尚</span>
+				<span>你是女王</span>
+			</div>
+			
+		</section>
+		
+		<ul class="itemlist">
+				<li class="item">
+					<img style="width: 100%;"  src="img/1.jpg"/>
+					<p style="font-size: 24px;text-align: center;color: red;">颗粒皮毛一体</p>
+				</li>
+				<li class="item">
+					<img style="width: 100%;" src="img/2.jpg"/>
+					<p style="font-size: 24px;text-align: center;color: red;">颗粒皮毛一体</p>
+				</li>
+				<li class="item">
+					<img style="width: 100%;" src="img/3.jpg"/>
+					<p style="font-size: 24px;text-align: center;color: red;">颗粒皮毛一体</p>
+				</li>
+				<li class="item">
+					<img style="width: 100%;" src="img/4.jpg"/>
+					<p style="font-size: 24px;text-align: center;color: red;">颗粒皮毛一体</p>
+				</li>
+				<li class="item">
+					<img style="width: 100%;" src="img/5.jpg"/>
+					<p style="font-size: 24px;text-align: center;color: red;">颗粒皮毛一体</p>
+				</li>
+				
+			</ul>
+			
+	     
+		
+		
+		
+		
+		<script src="js/zepto/zepto.js"></script>
+		
+		<script src="js/zepto/event.js"></script>
+		<script src="js/zepto/touch.js"></script>
+		<script>
+		
+			window.requestAnimFrame = (function(){
+				  return  window.requestAnimationFrame       ||
+				          window.webkitRequestAnimationFrame ||
+				          window.mozRequestAnimationFrame    ||
+				          function( callback ){
+				            window.setTimeout(callback, 1000 / 60);
+				          };
+			})();
+			
+			window.cancelrequestAnimFrame = (function(){
+				  return  window.cancelAnimationFrame   ||
+				          window.webkitCancelAnimationFrame ||
+				          window.mozCancelAnimationFrame    ||
+				          window.clearTimeout;
+				          
+			})();
+			
+			
+		
+			$(function(){
+				//假设当前的进度值是 50
+				var value = $(".pro-wrap").attr("data-proccess");
+				
+				var currentValue = 0;
+				var step = value / 30;
+				var timerId;
+				
+				//（1）红色的前景的宽度:从0 --- 整个宽度的一半       c3动画
+				var totalWidth = $(".pro-wrap").width();
+				var frontWidth = totalWidth * value/100 ; 
+				$(".pro-front").css("width",   frontWidth);
+	
+				// （2） left从0  到  红色的前景的宽度 - 自己宽度/2  c3动画
+				$(".pro-block").css("left", frontWidth - $(".pro-block").width()/2  );
+				
+				// (3)数字从0不断增加 到 value
+				function  addNumber(){
+					//currentV
+					console.info("addNumber"); //1s 60次
+					currentValue = currentValue + step;
+					
+					currentValue = currentValue.toFixed(2);//保留两位有效数字
+					
+					//Math.max();
+					currentValue = currentValue > value ?  value : currentValue;
+					
+					$(".pro-block").html( currentValue + "%");
+					
+					timerId = requestAnimFrame(function(){
+						addNumber();
+					});
+					
+					if(currentValue >= value) {
+						cancelrequestAnimFrame(timerId);
+					}
+				}
+				
+				addNumber();
+			});
+			
+			
+			$(function(){
+			
+				$("#menu").on("tap",function(){
+					console.info("tap");
+					
+					$("#mask").toggle();
+				})
+			});
+			
+			
+		</script>
+	</body>
+</html>
